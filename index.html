@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .header {
+            /* border: 1px solid black; */
+            height: 90px;
+            position: fixed ;
+            left: 199px;
+            width: 84%;
+            /* position: fixed; */
+        }
+
+        .searchbox {
+            /* border: 1px solid black; */
+            height: 43 px;
+            position: absolute;
+            top: 16px;
+            width: 40%;
+            left: 153px;
+
+        }
+
+        #inputbox {
+            margin-top: 6px;
+            width: 97.5%;
+            height: 53%;
+            margin-bottom: 4px;
+            border-radius: 23px;
+            border-style: ridge;
+            border: 1px solid rgb(148, 148, 148);
+            padding-left: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* font-size: 32px */
+
+        }
+
+        #searchbutton {
+            position: absolute;
+            top: 7px;
+            bottom: 0px;
+            right: 2px;
+            border-radius: 0 40px 40px 0;
+            background-color: #f8f8f8;
+            border-left: 1px solid rgb(148, 148, 148);
+            /* border: none; */
+            border-top: none;
+            border-right: none;
+            border-bottom: none;
+            height: 22px;
+            width: 34px;
+
+
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 9px;
+            top: 5px;
+        }
+
+        #micbtn {
+            position: absolute;
+            left: 588px;
+            top: 23px;
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background-color: #f8f8f8;
+            border: 1px rgb(148, 148, 148);
+            cursor: pointer;
+        }
+
+        #micbtn:hover {
+            background-color: #c5c1c1;
+        }
+
+        .categories {
+            /* border: 1px solid black; */
+            position: absolute;
+            top: 58px;
+            width: 100%;
+            height: 34%;
+            display: flex;
+            justify-content: flex-start;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+
+        .categories::-webkit-scrollbar {
+            height: 1px;
+        }
+
+        #div1 {
+            border: none;
+            justify-content: center;
+            padding: 2px 5px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: small;
+            background-color: #f8f8f8;
+            cursor: pointer;
+            /* border: 1px solid black;
+            height: 23px;
+            padding-top: 1px;
+            text-align: center;
+            padding-bottom:0px;
+            position: absolute;
+            top: 6px;
+            bottom: 0px;
+            padding-left: 6px;
+            padding-right: 6px; */
+        }
+
+        #div1:hover {
+            background-color: #e5e5e5;
+            transform: scale(1);
+        }
+
+        .sidebar {
+            /* border: 1px solid black; */
+            width: 15.5%;
+            height: 100%;
+            position: absolute;
+            position: fixed;
+            top: -2px;
+        }
+
+        .sidebarlogo {
+            /* border: 1px solid black; */
+            position: absolute;
+            top: 28px;
+            width: 85%;
+            left: 9px;
+            height: 9%;
+
+        }
+
+        .sidebarbtn {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background-color: white;
+            border: none;
+
+        }
+
+        .sidebarbtn:hover {
+            background-color: #c5c1c1
+        }
+
+        #youtubelogobtn {
+            background-color: white;
+            border: none;
+            position: absolute;
+            top: 2px;
+            left: 26px;
+            cursor: pointer;
+        }
+
+        .sidebarcategories {
+            /* border: 1px solid black; */
+            position: absolute;
+            top: 72px;
+            height: 85%;
+            width: 89%;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+        }
+
+        .sidebarcategories ul {
+            margin-top: 1px;
+            list-style-type: none;
+        }
+
+        #sidelist {
+            margin-left: -40px;
+
+
+        }
+
+        #sidelist a {
+
+            padding: 8px 16px;
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+            color: black;
+
+        }
+
+        #sidelist :hover {
+            background-color: #c5c1c1;
+            border-radius: 10px;
+
+        }
+
+        .fa-house {
+            width: 32px;
+        }
+
+        i {
+            width: 32px;
+            height: 2px;
+        }
+
+        .fa-microphone {
+            width: 9px;
+        }
+
+        .search-icon {
+            width: 15px;
+        }
+
+        .fa-bars {
+            width: 13px;
+        }
+
+        .explore {
+            /* border: 1px solid black; */
+            position: absolute;
+            /* top: 300px;
+            width: 177px;
+            height: 177px; */
+        }
+
+        #exp {
+            display: block;
+            /* border: 1px solid black; */
+            position: absolute;
+            top: 157px;
+            left: 15px;
+
+        }
+
+        #hr1 {
+            position: absolute;
+            top: 155px;
+            width: 100%;
+        }
+
+        #hr2 {
+            position: absolute;
+            top: 300px;
+            width: 100%;
+        }
+
+        #morefromyoutube {
+            display: block;
+            /* border: 1px solid black; */
+            position: absolute;
+            left: 15px;
+        }
+
+        .youtube-icon {
+            color: #FF0000;
+            font-size: 20px;
+        }
+
+        .music-icon {
+            color: #FF0033;
+            font-size: 20px;
+        }
+
+        .sidebarcategories::-webkit-scrollbar {
+            height: 1px;
+            scrollbar-width: thin;
+            /* "auto" or "thin" */
+            scrollbar-color: #888 #f1f1f1;
+        }
+
+        #hr3 {
+            position: absolute;
+            top: 448px;
+            width: 100%;
+        }
+
+        .sidebarcategories {
+            scrollbar-width: thin;
+            /* "auto" or "thin" */
+            scrollbar-color: #888 #f1f1f1;
+            /* thumb and track color */
+        }
+
+        .ytcontent {
+            /* border: 1px solid black; */
+            width: 83%;
+            height: 100%;
+            position: Absolute;
+            top: 102px;
+            left: 207px;
+            scrollbar-width: thin;
+            /* "auto" or "thin" */
+            scrollbar-color: #888 #f1f1f1;
+            /* thumb and track color */
+            overflow-y: auto;
+            overflow-x: hidden;
+
+        }
+
+        .ytcontent::-webkit-scrollbar {
+            height: 1px;
+            scrollbar-width: thin;
+            /* "auto" or "thin" */
+            scrollbar-color: #888 #f1f1f1;
+        }
+
+        .video1 {
+            /* border: 1px solid black; */
+            position: absolute;
+            width: 100%;
+            height: 45%;
+            display: flex;
+            justify-content: flex-start;
+
+        }
+
+        .video1 div {
+            /* border: 1px solid black; */
+            margin: 2px;
+            width: 35%;
+            font-size: 12px;
+        }
+        /* .video1:hover{
+            color: #888;
+            transition: 0.3s;
+        } */
+
+        #short {
+            /* border: 1px solid black; */
+            position: absolute;
+            top: 270px;
+            left: 10px;
+            height: 22px;
+            width: 50px;
+        }
+
+        .shorts {
+            /* border: 1px solid black; */
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            top: 310px;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+
+        }
+
+        .shorts div {   
+            /* border: 1px solid black; */
+            width: 20%;
+            height: 110%;
+            /* position: absolute; */
+            top: 1px;
+            margin: 3px;
+        }
+        .shorttext{
+            position: absolute;
+            top: 75px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="searchbox">
+            <input id="inputbox" type="text" placeholder="Search"><button id="searchbutton"><i
+                    class="fas fa-search search-icon"></i></button>
+        </div>
+        <button id="micbtn"><i class="fa-solid fa-microphone"></i></button>
+        <div class="categories">
+            <div id="div1">All</div>
+            <div id="div1">Music</div>
+            <div id="div1">News</div>
+            <div id="div1">Mix</div>
+            <div id="div1">Pakistan Dramas</div>
+            <div id="div1">Programming</div>
+            <div id="div1">Games</div>
+            <div id="div1">Sports</div>
+            <div id="div1">Live</div>
+            <div id="div1">Web Development</div>
+            <div id="div1">Data Structures</div>
+            <div id="div1">Electronics</div>
+            <div id="div1">Qawali</div>
+            <div id="div1">Podcasts</div>
+            <div id="div1">Animals</div>
+            <div id="div1">Humans</div>
+
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebarlogo">
+            <button class="sidebarbtn"><i class="fa-solid fa-bars"></i></button>
+            <a href="https://www.youtube.com"> <button id="youtubelogobtn"><img src="YouTube_Logo_2017.svg.webp" alt=""
+                        width="70px"></button></a>
+        </div>
+        <div class="sidebarcategories">
+            <ul>
+                <li id="sidelist"><a href=""><i class="fa-solid fa-house"></i>Home</a></li>
+                <li id="sidelist"><a href=""><i class="fa-solid fa-bolt"></i>Shorts</a></li>
+                <li id="sidelist"><a href=""><i class="fa-solid fa-play"></i>Subscriptions</a></li>
+                <li id="sidelist"><a href=""><i class="fa-regular fa-user"></i>You</a></li>
+                <li id="sidelist"><a href=""><i class="fa-solid fa-clock-rotate-left"></i>History</a></li>
+
+                <b>
+                    <p id="exp">Explore</p>
+                </b>
+                <br>
+                <br>
+                <li id="sidelist"><a href=""><i class="fa-solid fa-music"></i>Music</a></li>
+                <li id="sidelist"><a href=""><i class="fa-solid fa-bolt"></i>Gaming</a></li>
+                <li id="sidelist"><a href=""><i class="fa-solid fa-play"></i>News</a></li>
+
+                <b>
+                    <p id="morefromyoutube">More From Youtube</p>
+                </b>
+                <br>
+                <br>
+                <li id="sidelist"><a href=""><i class="fa-brands fa-youtube music-icon"></i>Premium</a></li>
+                <li id="sidelist"><a href=""><i class="fa-solid fa-bolt"></i>Youtube Music</a></li>
+                <li id="sidelist"><a href=""><i class="fa-solid fa-play"></i>Youtube Kids</a></li>
+
+                <br>
+
+                <li id="sidelist"><a href=""><i class="fa-solid fa-gear"></i>Settings</a></li>
+                <li id="sidelist"><a href=""><i class="fa-solid fa-flag"></i>Report History</a></li>
+                <li id="sidelist"><a href=""><i class="fa-regular fa-circle-question"></i>Help</a></li>
+            </ul>
+            <hr id="hr1">
+            <hr id="hr2">
+            <hr id="hr3">
+
+        </div>
+
+    </div>
+    <div class="ytcontent">
+        <div class="video1">
+            <div><img src="ss1.png" alt="" width="100%" height="85%">Ishq-Murshid Best Scene | Fazal Baksh | Servicing
+                the owner Best Pakistani Dramas</div>
+            <div><img src="ss2.png" alt="" width="100%" height="85%">Ghareeb Se Ameer Hone Ka Safar | Hamayun Saeed Life
+                Story | Best Motivation For Success </div>
+            <div><img src="ss3.png" alt="" width="100%" height="85%">ये सच है की यहाँ भूत है | Vasooli Bhai, Sanjay
+                Mishra, Arshad Warsi | Golmaal Again Comedy Scene</div>
+        </div>
+        <img id="short" src="ss4.png" alt="">
+        <div class="shorts">
+            <div><img src="ss5.png" alt="" width="100%" height="90%"></div>
+            <div><img src="Screenshot 2026-01-23 000315.png" alt="" width="100%" height="90%"></div>
+            <div><img src="Screenshot 2026-01-23 000329.png" alt="" width="100%" height="90%"></div>
+            <div><img src="Screenshot 2026-01-23 000346.png" alt="" width="100%" height="90%"></div>
+            <div><img src="Screenshot 2026-01-23 000646.png" alt=""width="100%" height="90%"></div>
+
+
+        </div>
+    </div>
+    <script>
+
+        let cats = document.querySelectorAll('#div1');
+
+        cats.forEach(cat => {
+            cat.onclick = function () {
+                cats.forEach(c => {
+                    c.style.backgroundColor = '#f8f8f8';
+                    c.style.color = 'black';
+                });
+                this.style.backgroundColor = 'black';
+                this.style.color = 'white';
+            };
+        });
+    </script>
+    <!-- http://127.0.0.1:5500/index.html -->
+</body>
+
+</html>
